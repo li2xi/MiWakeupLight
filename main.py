@@ -56,3 +56,7 @@ if __name__ == "__main__":
     print(time.gmtime())
     d1 = datetime.datetime.now()
     print(d1)
+    # while time.ctime()
+    while time.time() <= 1527809400:
+        time.sleep(10)
+    wakeup_entity()
