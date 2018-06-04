@@ -46,7 +46,9 @@ if __name__ == "__main__":
     # lights = get_lights()
     # for light in lights:
     #     light.off()
-    # wakeup_entity()
+    #     light.set_brightness_and_color_temperature(100, 1)
+    # # wakeup_entity()
+    # exit(0)
     t = time.strptime("03:00", "%H:%M")
 
     print(time.localtime())
@@ -57,6 +59,6 @@ if __name__ == "__main__":
     d1 = datetime.datetime.now()
     print(d1)
     # while time.ctime()
-    while time.time() <= 1527809400:
+    while time.time() <= 1528153200:
         time.sleep(10)
-    wakeup_entity()
+    linear_wakeup()
