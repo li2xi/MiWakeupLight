@@ -10,6 +10,6 @@ configs = {
     "wake_up_start_time": "7:00",
     "wake_up_action": {
         "mode": "linear",
-        "duration":  20 * 60
+        "duration":  30 * 60
     }
 }

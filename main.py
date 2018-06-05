@@ -59,6 +59,6 @@ if __name__ == "__main__":
     d1 = datetime.datetime.now()
     print(d1)
     # while time.ctime()
-    while time.time() <= 1528153200:
+    while time.time() <= 1528153200 + 24 * 60 * 60:
         time.sleep(10)
-    linear_wakeup()
+    wakeup_entity()
