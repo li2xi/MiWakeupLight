@@ -32,9 +32,12 @@ def linear_wakeup(config=None):
     wake_up_duration = config["duration"]
     for i in range(1, 101):
         for light in lights:
-            light.on()
-            light.set_brightness_and_color_temperature(i, i)
-            logging.debug("set light %s's brightness and cct to %d", light.ip, i)
+            try:
+                light.on()
+                light.set_brightness_and_color_temperature(i, i)
+                logging.debug("set light %s's brightness and cct to %d", light.ip, i)
+            except Exception as ex:
+                logging.error("Set light status failed. %s", ex)
         time.sleep(wake_up_duration / 100)
 
 def schedule_next_wakeup():
@@ -59,6 +62,6 @@ if __name__ == "__main__":
     d1 = datetime.datetime.now()
     print(d1)
     # while time.ctime()
-    while time.time() <= 1528153200 + 24 * 60 * 60:
+    while time.time() <= 1528153200 + 2 / 24 * 60 * 60:
         time.sleep(10)
     wakeup_entity()
